@@ -1,0 +1,80 @@
+/* TOUR: the guide cursor, its speech bubble and the skip / replay button. */
+
+.guide {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s;
+  will-change: transform;
+}
+.guide.on { opacity: 1; }
+.guide.pressing .guide-arrow { transform: scale(0.8); }
+.guide-arrow {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  width: 26px;
+  height: 26px;
+  overflow: visible;
+  filter: drop-shadow(0 2px 3px rgb(0 0 0 / 0.3));
+  transition: transform 0.1s;
+}
+.guide-arrow path { stroke-linejoin: round; }
+.guide-rim { fill: none; stroke: var(--paper); stroke-width: 6; }
+.guide-body { fill: var(--ink); stroke: var(--ink); stroke-width: 3; }
+
+/* Speech bubble */
+.guide-tag {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: max-content;
+  max-width: min(16rem, calc(100vw - 1rem));
+  padding: 0.25rem 0.7rem 0.3rem;
+  border-radius: 6px 16px 16px 16px;
+  background: var(--ink);
+  color: var(--paper);
+  box-shadow: 0 6px 20px rgb(0 0 0 / 0.18);
+  transition: transform 0.2s;
+}
+.guide-tag.up { border-radius: 16px 16px 16px 6px; }
+.guide-tag.left { border-radius: 16px 6px 16px 16px; }
+.guide-tag.up.left { border-radius: 16px 16px 6px 16px; }
+.guide-name { font-size: 0.72rem; font-weight: 600; }
+.talking .guide-name { opacity: 0.6; }
+.guide-text { display: none; font-size: 0.85rem; font-weight: 500; line-height: 1.4; }
+.talking .guide-text { display: block; }
+.guide-rest { visibility: hidden; }
+.tour-on { color: var(--ink) !important; }
+
+/* Skip / replay button */
+.tour-pill {
+  position: fixed;
+  bottom: 1.25rem;
+  left: 50%;
+  z-index: 40;
+  display: flex;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--paper);
+  box-shadow: 0 4px 16px rgb(0 0 0 / 0.1);
+  transform: translateX(-50%);
+}
+.tour-pill[hidden] { display: none; }
+.tour-pill button {
+  padding: 0.35rem 0.8rem;
+  border: 0;
+  border-radius: 999px;
+  background: none;
+  color: var(--muted);
+  font: 400 0.75rem var(--mono);
+  white-space: nowrap;
+}
+.tour-pill button:hover { background: var(--soft); color: var(--ink); }
+
+@media (min-width: 1024px) {
+  .tour-pill { top: 1.25rem; right: 1.5rem; bottom: auto; left: auto; transform: none; }
+}

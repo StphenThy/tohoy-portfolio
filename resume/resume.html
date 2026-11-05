@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Stephen Tohoy - Resume</title>
+<style>
+  @page { size: Letter; margin: 0.42in 0.55in; }
+  * { box-sizing: border-box; }
+  body { margin: 0; color: #000; font: 9.6pt/1.22 Arial, Helvetica, sans-serif; }
+  header { text-align: center; }
+  h1 { margin: 0; font-size: 19pt; line-height: 1.1; letter-spacing: 0.01em; }
+  header p { margin: 0; }
+  header .title { font-size: 10.5pt; }
+  header .line { font-size: 8.8pt; }
+  h2 { margin: 7pt 0 3pt; padding-bottom: 1pt; border-bottom: 0.75pt solid #000; font-size: 10.5pt; }
+  .row { display: flex; justify-content: space-between; gap: 12pt; }
+  .entry { margin-bottom: 3.5pt; break-inside: avoid; }
+  .entry .row:first-child { font-weight: 700; }
+  .entry .row + .row { font-style: italic; }
+  ul { margin: 0; padding-left: 12pt; }
+  li { padding-left: 1pt; }
+  p { margin: 0; }
+  .skills p { margin-bottom: 1pt; }
+  a { color: inherit; text-decoration: none; }
+</style>
+</head>
+<body>
+  <header>
+    <h1>STEPHEN TOHOY</h1>
+    <p class="title">Full-Stack Developer</p>
+    <p class="line">Davao City, Philippines | stephentohoy@gmail.com</p>
+    <p class="line">github.com/StphenThy | linkedin.com/in/stephen-tohoy-310654366</p>
+  </header>
+
+  <h2>PROFESSIONAL SUMMARY</h2>
+  <p>Full-stack developer and Information Technology student who builds web and mobile applications, with a current focus on generative AI. Built and deployed Findry, an AI job-matching platform for the Philippine tech market, and PipAI, a conversational AI assistant, alongside mobile apps in Flutter and React Native. Dean's Lister and Academic Scholar.</p>
+
+  <h2>PROJECT EXPERIENCE</h2>
+
+  <div class="entry">
+    <div class="row"><span>Full-Stack Developer</span><span>2026</span></div>
+    <div class="row"><span>Findry - AI Job Matching Platform</span><span>findry-ph.vercel.app</span></div>
+    <ul>
+      <li>Built a job-matching platform for the Philippine tech market with React, TypeScript, Node.js, Express, and MongoDB, giving job seekers and employers two separate portals that meet only at the point of application.</li>
+      <li>Designed an explainable match score weighing skills (45%), experience (30%), and education (25%), with a full breakdown of matched and missing skills returned with every result.</li>
+      <li>Integrated Gemini for resume parsing and skill suggestions behind a swappable provider interface, keeping AI out of the scoring path and falling back to a local engine on any AI error.</li>
+      <li>Implemented JWT sign-in, password hashing, request validation, and email verification with 6-digit codes.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="row"><span>Full-Stack Developer</span><span>2026</span></div>
+    <div class="row"><span>Lablet - Medical Technology Study App</span><span>School Project</span></div>
+    <ul>
+      <li>Built a responsive study app with Next.js, TypeScript, and Supabase covering the six major Medical Technology subjects, with review material, quizzes, timed mock exams, and progress tracking.</li>
+      <li>Implemented spaced-repetition flashcards and in-browser PDF and PowerPoint reading that turns a student's own pages into flashcards without uploading the files.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="row"><span>Mobile and API Developer</span><span>2026</span></div>
+    <div class="row"><span>Pinay Stars - Actress Directory App</span><span>github.com/StphenThy/pinay-stars</span></div>
+    <ul>
+      <li>Built a React Native and Expo app where members browse, search, favorite, review, and submit profiles, and admins approve submissions and manage records.</li>
+      <li>Developed a custom PHP and MySQL REST API with full CRUD, token-based accounts, rate limiting, reviews, and notifications, and integrated the TMDB API for film and TV posters.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="row"><span>AI Application Developer</span><span>2025</span></div>
+    <div class="row"><span>PipAI - Conversational AI Assistant</span><span>pipaipoy.web.app</span></div>
+    <ul>
+      <li>Built and deployed an AI assistant on Firebase for natural conversation, creative writing, coding help, and learning new topics.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="row"><span>Mobile Developer</span><span>2024</span></div>
+    <div class="row"><span>SolarBuddy - Solar Energy Companion App</span><span>solarbuddy-16093.web.app</span></div>
+    <ul>
+      <li>Built a Flutter and Supabase app with user accounts, solar monitoring, hourly forecasts, analytics charts, and a usage planner that schedules appliance tasks by power and duration.</li>
+    </ul>
+  </div>
+
+  <h2>EDUCATION</h2>
+
+  <div class="entry">
+    <div class="row"><span>Bachelor of Science in Information Technology, Major in Healthcare Technology</span><span>2023 - 2027 (Expected)</span></div>
+    <div class="row"><span>University of the Immaculate Conception</span><span>Davao City</span></div>
+    <ul><li>Dean's Lister and Academic Scholar</li></ul>
+  </div>
+
+  <div class="entry">
+    <div class="row"><span>Senior High School, Science, Technology, Engineering, and Mathematics Strand</span><span>2021 - 2023</span></div>
+    <div class="row"><span>Holy Cross College of Calinan</span><span>Davao City</span></div>
+    <ul><li>Best Capstone Awardee for a hardware air quality monitoring system that detects, displays, and helps filter air pollutants</li></ul>
+  </div>
+
+  <h2>TECHNICAL SKILLS</h2>
+  <div class="skills">
+    <p><strong>Languages:</strong> TypeScript, JavaScript, Python, PHP, Dart, SQL, HTML, CSS</p>
+    <p><strong>Frameworks:</strong> React, Next.js, React Native, Expo, Flutter, Node.js, Express, Vite, Tailwind CSS, GSAP</p>
+    <p><strong>Data &amp; Backend:</strong> MongoDB, Mongoose, MySQL, Supabase, Firebase, REST APIs, JWT</p>
+    <p><strong>AI &amp; Computer Vision:</strong> Gemini API, TensorFlow.js, OpenCV, MediaPipe, NumPy, Tesseract.js</p>
+    <p><strong>Tools:</strong> Git, GitHub, npm, ESLint, Vercel, Render</p>
+  </div>
+
+  <h2>CERTIFICATIONS</h2>
+  <div class="row"><span><strong>Create Your First Python Program From UST</strong>, Coursera</span><span>2025</span></div>
+  <div class="row"><span><strong>Build a Free Website with WordPress</strong>, Coursera</span><span>2025</span></div>
+</body>
+</html>

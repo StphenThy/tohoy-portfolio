@@ -1,0 +1,98 @@
+/* LOADER: the loading screen. It stays dark in both white and dark mode. */
+
+html.loading, html.loading body { overflow: hidden; }
+
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #0c0c0e;
+  color: #f4f4f5;
+  transition: transform 0.7s cubic-bezier(0.76, 0, 0.24, 1);
+}
+.loader.done { transform: translateY(-100%); }
+
+/* Same faint grid as the rest of the site */
+.loader::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgb(244 244 245 / 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(244 244 245 / 0.08) 1px, transparent 1px);
+  background-size: 44px 44px;
+  -webkit-mask-image: radial-gradient(ellipse 65% 70% at 100% 0%, #000, transparent 75%);
+  mask-image: radial-gradient(ellipse 65% 70% at 100% 0%, #000, transparent 75%);
+}
+
+.loader-name {
+  position: absolute;
+  top: 2rem;
+  left: 1.5rem;
+  font: 400 1.15rem/1 var(--display);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+/* The giant moving words */
+.loader-track {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: flex;
+  width: max-content;
+  transform: translateY(-50%);
+  animation: loaderSlide 16s linear infinite;
+}
+.loader-track span {
+  padding-right: 0.5em;
+  font: 400 clamp(4rem, 13vw, 11rem)/1 var(--display);
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.loader-track span:nth-child(even) {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgb(244 244 245 / 0.45);
+}
+@keyframes loaderSlide {
+  to { transform: translate(-50%, -50%); }
+}
+
+/* The pill. Its coloured edge grows with the percentage. */
+.loader-pill {
+  --progress: 0;
+  position: relative;
+  padding: 3px;
+  border-radius: 999px;
+  background: conic-gradient(from -90deg, var(--accent) calc(var(--progress) * 1%), #2a2a30 0);
+  box-shadow: 0 14px 44px rgb(0 0 0 / 0.65), 0 0 40px rgb(224 88 79 / 0.22);
+}
+.loader-pill-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+  min-width: min(17rem, 72vw);
+  padding: 1.1rem 2rem;
+  border-radius: 999px;
+  background: #050506;
+  font: 400 0.95rem var(--mono);
+  letter-spacing: 0.08em;
+}
+.loader-percent { display: flex; align-items: center; gap: 0.2rem; color: #a6a6ad; font-variant-numeric: tabular-nums; }
+.loader-percent::after {
+  content: "";
+  width: 0.55em;
+  height: 1.05em;
+  background: var(--accent);
+  animation: loaderBlink 1s steps(1) infinite;
+}
+@keyframes loaderBlink { 50% { opacity: 0; } }
+
+@media (min-width: 1024px) {
+  .loader-name { left: 1.5rem; }
+}

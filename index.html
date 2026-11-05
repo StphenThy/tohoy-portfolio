@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en" class="loading">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio</title>
+  <meta name="description" content="Personal portfolio">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Runs first so the page never flashes the wrong colours -->
+  <script src="js/theme.js"></script>
+
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/tour.css">
+  <link rel="stylesheet" href="css/loader.css">
+</head>
+<body>
+  <!-- Loading screen -->
+  <div class="loader" id="loader">
+    <p class="loader-name" id="loaderName"></p>
+    <div class="loader-track" id="loaderTrack" aria-hidden="true"></div>
+    <div class="loader-pill" id="loaderPill" role="status" aria-label="Loading">
+      <div class="loader-pill-inner">
+        <span>LOADING</span>
+        <span class="loader-percent" id="loaderPercent">0%</span>
+      </div>
+    </div>
+  </div>
+  <script src="js/helpers.js"></script>
+  <script src="js/sections/about.js"></script>
+  <script src="js/loader.js"></script>
+
+  <!-- Top bar (phones) -->
+  <header class="topbar">
+    <a class="brand" href="#about" data-name></a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="sidebar">menu</button>
+  </header>
+
+  <!-- Side menu (computers) -->
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="#about" data-name></a>
+    <p class="status" id="status"></p>
+    <nav id="nav" aria-label="Sections"></nav>
+    <div class="theme-switch" role="group" aria-label="Colour mode"></div>
+  </aside>
+
+  <!-- Filled in by js/main.js from the files in js/sections/ -->
+  <main id="top"></main>
+
+  <!-- Tour cursor -->
+  <div class="guide" id="guide" aria-hidden="true">
+    <svg class="guide-arrow" viewBox="0 0 24 24">
+      <path class="guide-rim" d="M4 4l5 15 2.8-7.2L19 9z"/>
+      <path class="guide-body" d="M4 4l5 15 2.8-7.2L19 9z"/>
+    </svg>
+    <div class="guide-tag" id="guideTag">
+      <span class="guide-name" id="guideName"></span>
+      <p class="guide-text"><span id="guideTyped"></span><span class="guide-rest" id="guideRest"></span></p>
+    </div>
+  </div>
+
+  <!-- "skip tour" / "take the tour again" button -->
+  <div class="tour-pill" id="tourPill" hidden>
+    <button type="button" id="tourToggle"></button>
+    <button type="button" id="tourDismiss" aria-label="Hide this button">×</button>
+  </div>
+
+  <script src="js/vendor/three.min.js"></script>
+  <script src="js/stack-icons.js"></script>
+
+  <!-- One file per section of the page -->
+  <script src="js/sections/projects.js"></script>
+  <script src="js/sections/stack.js"></script>
+  <script src="js/sections/experience.js"></script>
+  <script src="js/sections/certifications.js"></script>
+  <script src="js/sections/github.js"></script>
+  <script src="js/sections/contact.js"></script>
+
+  <script src="js/main.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/clock.js"></script>
+  <script src="js/avatar.js"></script>
+  <script src="js/roles.js"></script>
+  <script src="js/previews.js"></script>
+  <script src="js/github-feed.js"></script>
+  <script src="js/tour.js"></script>
+</body>
+</html>
